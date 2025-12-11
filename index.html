@@ -3,28 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>私のWebページ</title>
+  <title>ワクワク！キッズランド</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Nunito", "Baloo 2", system-ui, sans-serif;
+      background-color: #fbe9ff;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background: radial-gradient(circle at top, #ffe0f3, #fdf4b7 40%, #a3e4ff);
+      margin: 0;
+      color: #1f1c38;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(135deg, #ffb347, #ffcc33);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+    header h1 {
+      font-family: "Baloo 2", cursive;
+      font-size: clamp(2.8rem, 5vw, 3.3rem);
+      margin: 0;
+      color: #451f78;
+    }
+    header p {
+      margin: 0.7rem auto 1.5rem;
+      font-size: 1.2rem;
+      max-width: 520px;
+    }
+    .sparkle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-weight: 600;
+      color: #5d2b99;
+    }
+    .sparkle span {
+      font-size: 1.2rem;
+    }
+    main {
+      padding: 2.5rem 1rem 3rem;
+      display: grid;
+      gap: 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 1.8rem;
+      box-shadow: 0 20px 30px rgba(71, 64, 150, 0.15);
+      border: 2px solid rgba(255, 179, 71, 0.4);
+    }
+    .card h2 {
+      margin-top: 0;
+      font-family: "Baloo 2", cursive;
+      font-size: 2rem;
+      color: #f3538c;
+    }
+    .card p {
+      margin: 0.7rem 0 1rem;
+      line-height: 1.6;
+    }
+    .activities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .activities button {
+      border: none;
+      border-radius: 14px;
+      padding: 0.9rem;
+      font-size: 1rem;
+      background: linear-gradient(135deg, #ff8f73, #ffb347);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+      box-shadow: 0 10px 20px rgba(255, 143, 115, 0.4);
+    }
+    .activities button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px rgba(255, 143, 115, 0.45);
+    }
+    .favorite-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+    .favorite-list li {
+      background: #fef6d7;
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.95rem;
+      color: #4f2e69;
+    }
+    @media (max-width: 480px) {
+      header {
+        border-radius: 0 0 32px 32px;
+      }
+      .card {
+        padding: 1.4rem;
+      }
+      .activities button {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>ようこそ</h1>
-    <p>このサイトはGitHub Pagesで公開されています。</p>
+    <h1>ワクワク！キッズランド</h1>
+    <p>ふしぎな色とやわらかな光が広がる冒険の世界へようこそ。好きなものを選んで、今日も楽しくあそぼう！</p>
+    <div class="sparkle"><span>✨</span><span>なにをする？</span><span>✨</span></div>
   </header>
   <main>
-    <section>
-      <h2>自己紹介</h2>
-      <p>ここに簡単なプロフィールやプロジェクトの説明を入れます。</p>
+    <section class="card">
+      <h2>今日のおすすめあそび</h2>
+      <p>みんなでつくるクラフトや、きらきらのストーリーを読んだり。好きなボタンを押して、気になるあそびをさがそう！</p>
+      <div class="activities">
+        <button>ぬりえでアート</button>
+        <button>みんなでダンス</button>
+        <button>ふしぎな実験</button>
+        <button>えいがタイム</button>
+      </div>
     </section>
-    <section>
-      <h2>リンク</h2>
-      <ul>
-        <li><a href="https://github.com">GitHub</a></li>
-        <li><a href="https://example.com">例のページ</a></li>
+    <section class="card">
+      <h2>お気に入りストーリー</h2>
+      <p>ふしぎな森や空とぶくじら、笑顔あふれるおはなしを、好きなタイミングでのぞいてみてね。</p>
+      <ul class="favorite-list">
+        <li>虹のかけらをあつめる女の子</li>
+        <li>おひさまとダンスする犬のぼうけん</li>
+        <li>ゆめみるほしぞらのピクニック</li>
       </ul>
+    </section>
+    <section class="card">
+      <h2>みんなへのメッセージ</h2>
+      <p>あそびの中にはいつも学びがあるよ。くじけそうになったら深呼吸して、また一歩。わからないところは教えてね！</p>
+      <p>© 2024 ワクワク！キッズランド</p>
     </section>
   </main>
   <footer>
-    <p>© 2024 My GitHub Pages Site</p>
+    つくってくれてありがとう！またあそびにきてね。
   </footer>
 </body>
 </html>
