@@ -3,168 +3,217 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ワクワク！キッズランド</title>
+  <title>NEC 採用情報</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
-      font-family: "Nunito", "Baloo 2", system-ui, sans-serif;
-      background-color: #fbe9ff;
+      font-family: "Nunito", system-ui, sans-serif;
+      background-color: #eef6ff;
     }
     * {
       box-sizing: border-box;
     }
     body {
-      background: radial-gradient(circle at top, #ffe0f3, #fdf4b7 40%, #a3e4ff);
       margin: 0;
-      color: #1f1c38;
+      color: #1d2b44;
+      background: linear-gradient(180deg, #eef6ff 0%, #f6fbff 60%, #ffffff 100%);
       min-height: 100vh;
     }
     header {
+      padding: 3rem 1.5rem;
+      background: #102446;
+      color: white;
       text-align: center;
-      padding: 3rem 1rem 2rem;
-      background: linear-gradient(135deg, #ffb347, #ffcc33);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
     }
     header h1 {
       font-family: "Baloo 2", cursive;
-      font-size: clamp(2.8rem, 5vw, 3.3rem);
-      margin: 0;
-      color: #451f78;
+      font-size: clamp(2.4rem, 5vw, 3.3rem);
+      margin-bottom: 0.5rem;
     }
     header p {
-      margin: 0.7rem auto 1.5rem;
-      font-size: 1.2rem;
-      max-width: 520px;
+      margin: 0 auto 1.3rem;
+      max-width: 720px;
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
-    .sparkle {
+    .cta-button {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      font-weight: 600;
-      color: #5d2b99;
-    }
-    .sparkle span {
-      font-size: 1.2rem;
+      background: linear-gradient(135deg, #00a5ff, #00d7c0);
+      border: none;
+      color: white;
+      padding: 0.85rem 1.7rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 15px 30px rgba(0, 165, 255, 0.35);
     }
     main {
-      padding: 2.5rem 1rem 3rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+      display: grid;
+      gap: 1.75rem;
+    }
+    .panel {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(16, 36, 70, 0.08);
+      border: 1px solid rgba(16, 36, 70, 0.08);
+    }
+    .panel h2 {
+      margin-top: 0;
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      color: #102446;
+    }
+    .panel p {
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      color: #273854;
+    }
+    .mission-list,
+    .roles-list,
+    .benefits-list,
+    .mindset-list {
+      display: grid;
+      gap: 0.65rem;
+      margin: 0;
+      padding-left: 1rem;
+      color: #2b3d63;
+    }
+    .mission-list li,
+    .roles-list li,
+    .benefits-list li,
+    .mindset-list li {
+      list-style: none;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .mission-list li::before,
+    .roles-list li::before,
+    .benefits-list li::before,
+    .mindset-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #00a5ff;
+    }
+    .grid {
       display: grid;
       gap: 1.5rem;
-      max-width: 960px;
-      margin: 0 auto;
     }
-    .card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 24px;
-      padding: 1.8rem;
-      box-shadow: 0 20px 30px rgba(71, 64, 150, 0.15);
-      border: 2px solid rgba(255, 179, 71, 0.4);
+    .grid-columns {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    .card h2 {
-      margin-top: 0;
-      font-family: "Baloo 2", cursive;
-      font-size: 2rem;
-      color: #f3538c;
+    .highlight {
+      border: 2px solid #00d7c0;
+      background: linear-gradient(180deg, rgba(0, 215, 192, 0.08), rgba(255, 255, 255, 0));
     }
-    .card p {
-      margin: 0.7rem 0 1rem;
-      line-height: 1.6;
-    }
-    .activities {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .activities button {
-      border: none;
-      border-radius: 14px;
-      padding: 0.9rem;
-      font-size: 1rem;
-      background: linear-gradient(135deg, #ff8f73, #ffb347);
+    .notice {
+      background: #102446;
       color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 150ms ease, box-shadow 150ms ease;
-      box-shadow: 0 10px 20px rgba(255, 143, 115, 0.4);
-    }
-    .activities button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 30px rgba(255, 143, 115, 0.45);
-    }
-    .favorite-list {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      gap: 0.6rem;
-    }
-    .favorite-list li {
-      background: #fef6d7;
-      border-radius: 12px;
-      padding: 0.9rem 1rem;
+      padding: 1.2rem 1.6rem;
+      border-radius: 18px;
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
       align-items: center;
-      gap: 0.8rem;
-      font-weight: 600;
+    }
+    .notice strong {
+      font-size: 1rem;
     }
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem 1rem 3rem;
       font-size: 0.95rem;
-      color: #4f2e69;
+      color: #5c6a81;
     }
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       header {
-        border-radius: 0 0 32px 32px;
+        padding-bottom: 2rem;
       }
-      .card {
-        padding: 1.4rem;
+      .panel {
+        padding: 1.6rem;
       }
-      .activities button {
-        font-size: 0.95rem;
+      .notice {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>ワクワク！キッズランド</h1>
-    <p>ふしぎな色とやわらかな光が広がる冒険の世界へようこそ。好きなものを選んで、今日も楽しくあそぼう！</p>
-    <div class="sparkle"><span>✨</span><span>なにをする？</span><span>✨</span></div>
+    <h1>NEC 採用情報</h1>
+    <p>先進的なテクノロジーとビジネス変革の知見・経験を体系化した“Bluestellar”で、社会の安心・安全・公平・効率を支える仲間を募集しています。</p>
+    <a class="cta-button" href="https://www.nec.com/ja/careers/newgraduate/" target="_blank" rel="noopener">新卒採用ページを見る</a>
   </header>
   <main>
-    <section class="card">
-      <h2>今日のおすすめあそび</h2>
-      <p>みんなでつくるクラフトや、きらきらのストーリーを読んだり。好きなボタンを押して、気になるあそびをさがそう！</p>
-      <div class="activities">
-        <button>ぬりえでアート</button>
-        <button>みんなでダンス</button>
-        <button>ふしぎな実験</button>
-        <button>えいがタイム</button>
-      </div>
-    </section>
-    <section class="card">
-      <h2>お気に入りストーリー</h2>
-      <p>ふしぎな森や空とぶくじら、笑顔あふれるおはなしを、好きなタイミングでのぞいてみてね。</p>
-      <ul class="favorite-list">
-        <li>虹のかけらをあつめる女の子</li>
-        <li>おひさまとダンスする犬のぼうけん</li>
-        <li>ゆめみるほしぞらのピクニック</li>
+    <section class="panel">
+      <h2>コアミッション</h2>
+      <p>「安心・安全・公平・効率という社会価値を創造し、誰もが人間性を十分に発揮できる持続的な社会の実現へ」―この使命を胸に、NEC はBluestellarを通じて、社会課題と経営課題の双方に答え続けています。</p>
+      <ul class="mission-list">
+        <li>社会と企業の未来を見据えた技術と実装の両立</li>
+        <li>人権とインティグリティを大切にする意思決定</li>
+        <li>多様な価値観が安心して活躍できる職場づくり</li>
       </ul>
     </section>
-    <section class="card">
-      <h2>みんなへのメッセージ</h2>
-      <p>あそびの中にはいつも学びがあるよ。くじけそうになったら深呼吸して、また一歩。わからないところは教えてね！</p>
-      <p>© 2024 ワクワク！キッズランド</p>
+    <section class="panel grid grid-columns">
+      <article>
+        <h2>NECのBluestellar</h2>
+        <p>社会課題・経営課題を可視化し、テクノロジーと経験をつなぐ「Bluestellar」は、現場の知恵を体系化したアプローチです。あなたの専門性が、より強く社会に届くように。</p>
+      </article>
+      <article class="highlight">
+        <h2>求めるマインド</h2>
+        <ul class="mindset-list">
+          <li>ゆるぎないインティグリティと人権の尊重</li>
+          <li>あくなきイノベーションの追求</li>
+          <li>課題の本質を見抜き、協業で解決する力</li>
+        </ul>
+      </article>
+    </section>
+    <section class="panel">
+      <h2>募集職種（一部）</h2>
+      <p>研究×技術から経営・人事まで、次のNECを創る幅広いフィールドであなたを待っています。</p>
+      <ul class="roles-list">
+        <li>研究職 / 技術開発職 / システムエンジニア職 / サービスエンジニア職</li>
+        <li>コンサルタント職 / サプライチェーン関連職 / 品質エンジニア職</li>
+        <li>経営システム職 / 知的財産職(技術) / 法務・コンプライアンス職</li>
+        <li>FP&A職 / 人事職 / サプライチェーン戦略職</li>
+        <li>営業・ビジネスデザイン職 / その他スタッフ職</li>
+      </ul>
+    </section>
+    <section class="panel grid grid-columns">
+      <article>
+        <h2>暮らしに寄り添う福利厚生</h2>
+        <p>NECではカフェテリア制度を採用し、年間86,000ポイントを付与。ライフステージや価値観に合わせて、健やかな暮らしと仕事を両立していただけます。</p>
+      </article>
+      <article class="highlight">
+        <h2>カフェテリア制度</h2>
+        <ul class="benefits-list">
+          <li>ポイントの範囲で研修・育児・健康サポートなど自由に選択</li>
+          <li>自分の成長や家族・暮らしに合わせて使い方をアレンジ</li>
+          <li>多彩なメニューで明日への活力を支える</li>
+        </ul>
+      </article>
+    </section>
+    <section class="panel">
+      <div class="notice">
+        <strong>NECとともに、安心・安全・公平・効率を育む。</strong>
+        <span>ここから ↗︎</span>
+        <a class="cta-button" href="https://www.nec.com/ja/careers/newgraduate/" target="_blank" rel="noopener">新卒採用ページに移動</a>
+      </div>
     </section>
   </main>
   <footer>
-    つくってくれてありがとう！またあそびにきてね。
+    <p>NEC 一人ひとりの挑戦が社会の安心につながる。</p>
   </footer>
 </body>
 </html>
