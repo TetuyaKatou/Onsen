@@ -28,6 +28,18 @@
       color: white;
       text-align: center;
     }
+    .hero-visual {
+      margin: 1.5rem auto 2rem;
+      width: min(520px, 90%);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(16, 36, 70, 0.35);
+    }
+    .hero-visual svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
     header h1 {
       font-family: "Baloo 2", cursive;
       font-size: clamp(2.4rem, 5vw, 3.3rem);
@@ -153,6 +165,22 @@
   <header>
     <h1>NEC 採用情報</h1>
     <p>先進的なテクノロジーとビジネス変革の知見・経験を体系化した“Bluestellar”で、社会の安心・安全・公平・効率を支える仲間を募集しています。</p>
+    <div class="hero-visual" role="img" aria-label="ひとめでわかるNEC">
+      <svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#00a5ff"/>
+            <stop offset="100%" stop-color="#00d7c0"/>
+          </linearGradient>
+        </defs>
+        <rect width="640" height="240" rx="24" fill="url(#heroGrad)"/>
+        <text x="50" y="95" font-family="Baloo 2, serif" font-size="56" fill="white">ひとめでわかる</text>
+        <text x="50" y="150" font-family="Nunito, sans-serif" font-size="42" font-weight="700" fill="white">NEC</text>
+        <text x="50" y="195" font-family="Nunito, sans-serif" font-size="20" fill="white" letter-spacing="0.3">
+          安心・安全・公平・効率を、今この瞬間から。
+        </text>
+      </svg>
+    </div>
     <a class="cta-button" href="https://jpn.nec.com/recruit/newgraduate/index.html" target="_blank" rel="noopener">新卒採用ページを見る</a>
   </header>
   <main>
